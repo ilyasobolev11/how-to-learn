@@ -8,6 +8,10 @@
   /* выше для экранов больше 1600px отцентрировали весь контент */
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
+.link {
+  color: #2f80ed;
+  text-decoration: none;
+}
 
 .header {
   height: 100vh;
@@ -19,7 +23,19 @@
   display: flex;
   align-items: center;
   position: relative;
+  overflow: hidden; /*чтоб square-pic не вылезала при сужении*/
 }
+/*Правильно ли это по БЭМ?*/
+/*
+.page__header {
+  position: relative;
+}
+.header__inner {
+  height: 100%; inherit
+  display: flex;
+  align-items: center;
+}
+*/
 .header__title {
   width: 730px;
   margin: 0 0 0 64px;
@@ -37,10 +53,6 @@
   font-size: 18px;
   font-weight: normal;
 }
-.header__link {
-  color: #2f80ed;
-  text-decoration: none;
-}
 .header__main-illustration {
   background-image: url(../images/header-image.png);
   background-size: cover;
@@ -57,7 +69,7 @@
   height: 568px;
   width: 568px;
   position: absolute;
-  top: 64px; /*Вылезает за пределы header при сжатии т.к. мин высота header = 600px, а высота этого элемента + top = 632px*/
+  top: 64px;
   right: 0;
 }
 
@@ -65,11 +77,52 @@
   width: 183px;
   height: 32px;
 }
-.logo_place_header {
+.logo_place_header { /*по БЭМ правильно назвать logo__header*/
   position: absolute;
   top: 30px;
   left:64px;
   z-index: 2;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+}
+.content__description {
+  margin: 100px 0 0 0;
+}
+.two-columns {
+  width: 80%;
+  display: flex;/*переместить в two-columns__inner и обернуть в него элементы блока two-columns?*/
+  justify-content: space-between;
+}
+.two-columns__brief {
+  width: 175px;
+}
+.two-columns__title {
+  line-height: 1.2;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+}
+.two-columns__main-text {
+  width: 80%;
+  min-width: 784px;
+}
+.two-columns__paragraph {
+  margin: 30px 0;
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: normal;
+}
+.two-columns__paragraph:first-child {
+  margin: 0 0 30px 0;
+}
+.two-columns__paragraph:last-child {
+  margin: 30px 0 0 0;
+}
+.two-columns__span-accent {
+  font-weight: bold;
 }
 
 /* и элемента с модификатором вида ключ-значение */
