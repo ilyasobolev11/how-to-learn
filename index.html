@@ -17,15 +17,15 @@
       <h1 class="header__title">Научиться учиться</h1> <!--только один <h1>-->
       <p class="header__subtitle"> <!--лучше в <p> чем в <h2>, т.к. это подзаголовок-->
         Какие современные и эффективные подходы к обучению вы можете использовать в своей жизни?
-        <a class="link header__link" href="#">Узнать →</a>
+        <a class="link header__link" href="#">Узнать &rarr;</a>
       </p>
       <div class="header__main-illustration"></div>
       <div class="header__square-pic"></div>
     </header>
 
     <main class="content">
-      <section class="description content__description">
-        <div class="two-columns centred-block">
+      <section class="description">
+        <div class="two-columns">
           <div class="two-columns__brief">
             <h2 class="two-columns__title"><!--может лучше <h3>?-->
               <a class="link" href="#">Главные проблемы в обучении</a>
@@ -36,8 +36,7 @@
               Ни в школе, ни в институте нас не учат тому, как правильно изучать материал. Мы готовимся к экзаменам и учим билеты. Мы тренируемся решать однообразные задачи, чтобы лучше сдать тест, но часто в итоге это не дает нам реального знания. Зубрежка быстро выветривается и не приносит пользы.
             </p>
             <p class="two-columns__paragraph">
-              <span class="two-columns__span-accent">Вывод: </span>
-              учиться тоже нужно уметь, но почему-то этому мало где учат. Что с этим делать?
+              <span class="two-columns__span-accent">Вывод: </span>учиться тоже нужно уметь, но почему-то этому мало где учат. Что с этим делать?
             </p>
             <p class="two-columns__paragraph">
               Конкретные техники и упражнения помогают изменить подход к обучению, сделать его эффективным и захватывающим. Эти же техники применяются на примере обучения в Практикуме.
@@ -46,12 +45,12 @@
         </div>
       </section>
 
-      <section class="digits content__digits">
-        <h2 class="section-title digits__section-title centred-block">Цифры и факты</h2>
-        <p class="section-subtitle centred-block">Про учёбу и мозг</p>
-        <ul class="table centred-block list">
+      <section class="digits">
+        <h2 class="digits__section-title section-title">Цифры и факты</h2>
+        <p class="digits__section-subtitle section-subtitle">Про учёбу и мозг</p>
+        <ul class="table list">
           <li class="table__cell">
-            <h3 class="table__heading">86 миллиардов</h3><!--стоит ли использовать <h3>? может лучше <span> или <p>?-->
+            <h3 class="table__heading">86 миллиардов</h3><!--стоит ли использовать <h3>? может лучше <p>?-->
             <p class="table__text">Число нейронов в мозге человека</p>
           </li>
           <li class="table__cell">
@@ -88,18 +87,100 @@
       </section>
 
       <section class="feynman">
-        <h2 class="feynman__title">Метод Фейнмана</h2><!--хотел использовать микс с centred-block, но подумал, что раз это элемент, то если мы заберем блок feynman в другое место, то все расположение внутри нарушится, так что решил задать центрирование через flex всему feynman-->
+        <h2 class="feynman__title">Метод Фейнмана</h2><!--хотел использовать микс с centred-block (смотри БЭМ-заметки - использование миксов oправдано,	чтобы позиционировать один БЛОК в составе другого БЛОКА), но подумал, что раз это элемент, то если мы заберем блок feynman в другое место, то все расположение внутри нарушится, так что решил задать центрирование через flex всему feynman, из-за проблем с z-index-->
         <p class="feynman__subtitle">Выучить и не забыть.</p>
-        <a href="#" class="feynman__link link">Подробнее →</a>
+        <a href="#" class="feynman__link link">Подробнее &rarr;</a>
         <div class="feynman__main-illustration"></div>
       </section>
 
       <section class="kaufman">
-
+        <h2 class=" kaufman__section-title section-title section-title_theme_dark">Принципы обучения</h2>
+        <p class="kaufman__section-subtitle section-subtitle section-subtitle_theme_dark">от Джоша Кауфмана</p>
+        <ul class="kaufman__table table table_theme_dark list">
+          <li class="table__cell table__cell_theme_dark">
+            <h3 class="table__heading table__heading_theme_dark">1</h3>
+            <p class="table__text table__text_theme_dark">Выберите привлекательный проект.</p>
+          </li>
+          <li class="table__cell table__cell_theme_dark">
+            <h3 class="table__heading table__heading_theme_dark">2</h3>
+            <p class="table__text table__text_theme_dark">Сосредоточьтесь на каком-то одном навыке.</p>
+          </li>
+          <li class="table__cell table__cell_theme_dark">
+            <h3 class="table__heading table__heading_theme_dark">3</h3>
+            <p class="table__text table__text_theme_dark">Определите целевой уровень мастерства.</p>
+          </li>
+          <li class="table__cell table__cell_theme_dark">
+            <h3 class="table__heading table__heading_theme_dark">4</h3>
+            <p class="table__text table__text_theme_dark">Разбейте навык на элементы.</p>
+          </li>
+          <li class="table__cell table__cell_theme_dark">
+            <h3 class="table__heading table__heading_theme_dark">5</h3>
+            <p class="table__text table__text_theme_dark">Приготовьте всё необходимое для занятий.</p>
+          </li>
+          <li class="table__cell table__cell_theme_dark">
+            <h3 class="table__heading table__heading_theme_dark">6</h3>
+            <p class="table__text table__text_theme_dark">Устраните препятствия для занятий.</p>
+          </li>
+          <li class="table__cell table__cell_theme_dark">
+            <h3 class="table__heading table__heading_theme_dark">7</h3>
+            <p class="table__text table__text_theme_dark">Выделите специальное время для занятий.</p>
+          </li>
+          <li class="table__cell table__cell_theme_dark">
+            <h3 class="table__heading table__heading_theme_dark">8</h3>
+            <p class="table__text table__text_theme_dark">Создайте быстрые петли обратной связи.</p>
+          </li>
+          <li class="table__cell table__cell_theme_dark">
+            <h3 class="table__heading table__heading_theme_dark">9</h3>
+            <p class="table__text table__text_theme_dark">Занимайтесь по расписанию, короткими интенсивными интервалами.</p>
+          </li>
+          <li class="table__cell table__cell_theme_dark">
+            <h3 class="table__heading table__heading_theme_dark">10</h3>
+            <p class="table__text table__text_theme_dark">Уделяйте внимание количеству и скорости.</p>
+          </li>
+        </ul>
+        <div class="kaufman_triangle"></div>
       </section>
     </main>
-    <footer class="footer">
 
+    <footer class="footer">
+      <div class="footer__columns">
+        <div class="footer__column footer__column_content_copyright">
+          <img class="logo logo_place_footer" src="./images/logo_place_footer.svg" alt="logo-image">
+          <p class="footer__author">&copy; 2020. Илья Соболев</p>
+        </div>
+        <div class="footer__column footer__column_content_info">
+          <nav>
+            <h2 class="footer__column-heading">О Практикуме</h2><!--с точки зрения семантики, может лучше использовать <p>?-->
+            <ul class="footer__column-links list">
+              <li>
+                <a class="footer__column-link link" href="#">Главная</a>
+              </li>
+              <li>
+                <a class="footer__column-link link" href="#">Концепция</a>
+              </li>
+              <li>
+                <a class="footer__column-link link" href="#">Наставники</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__column footer__column_content_social">
+          <nav>
+            <h2 class="footer__column-heading">Соцсети</h2>
+            <ul class="footer__column-links list">
+              <li>
+                <a class="footer__column-link link" href="#"><img class="footer__link-icon" src="./images/facebook_color_white.svg" alt="facebook-icon">Facebook</a>
+              </li>
+              <li>
+                <a class="footer__column-link link" href="#"><img class="footer__link-icon" src="./images/vk_color_white.svg" alt="vkontakte-icon">ВКонтакте</a>
+              </li>
+              <li>
+                <a class="footer__column-link link" href="#"><img class="footer__link-icon" src="./images/instagram_color_white.svg" alt="instagram-icon">Instagram</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </footer>
   </div>
 </body>
