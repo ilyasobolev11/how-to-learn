@@ -13,24 +13,20 @@
 <body>
   <div class="page">
     <header class="header">
-      <img class="logo logo_place_header" src="./images/logo_place_header.svg" alt="logo-image">
+      <img class="logo logo_place_header" src="./images/logo_place_header.svg" alt="картинка-лого">
       <h1 class="header__title">Научиться учиться</h1>
-      <p class="header__subtitle"> <!--лучше в <p> чем в <h2>, т.к. это подзаголовок?-->
+      <p class="header__subtitle">
         Какие современные и эффективные подходы к обучению вы можете использовать в своей жизни?
-        <a class="link header__link" href="#">Узнать &rarr;</a>
+        <a class="header__link link" href="#">Узнать &rarr;</a>
       </p>
-      <div class="header__main-illustration"></div>
+      <img class="header__main-illustration" src="./images/header-image.png" alt="картинка - опять двойка"><!--больше похоже на фоновое изображение-->
       <div class="header__square-pic"></div>
     </header>
 
     <main class="content">
       <section class="description">
-        <div class="two-columns">
-          <div class="two-columns__brief">
-            <h2 class="two-columns__title">
-              <a class="link" href="#">Главные проблемы в обучении</a>
-            </h2>
-          </div>
+        <article class="two-columns">
+            <h2 class="two-columns__brief">Главные проблемы в обучении</h2><!--в свою защиту, хочу сказать, что в брифе четко прописано - *синий (ссылки, фигуры) #2f80ed* - так что я увидел цвет на макете, и реализовал это ссылкой-->
           <div class="two-columns__main-text">
             <p class="two-columns__paragraph">
               Ни в школе, ни в институте нас не учат тому, как правильно изучать материал. Мы готовимся к экзаменам и учим билеты. Мы тренируемся решать однообразные задачи, чтобы лучше сдать тест, но часто в итоге это не дает нам реального знания. Зубрежка быстро выветривается и не приносит пользы.
@@ -42,15 +38,15 @@
               Конкретные техники и упражнения помогают изменить подход к обучению, сделать его эффективным и захватывающим. Эти же техники применяются на примере обучения в Практикуме.
             </p>
           </div>
-        </div>
+        </article>
       </section>
 
       <section class="digits">
         <h2 class="digits__section-title section-title">Цифры и факты</h2>
         <p class="digits__section-subtitle section-subtitle">Про учёбу и мозг</p>
-        <ul class="table list">
+        <ul class="table digits__table">
           <li class="table__cell">
-            <h3 class="table__heading">86 миллиардов</h3><!--стоит ли использовать <h3>? может лучше <p>?-->
+            <h3 class="table__heading">86 миллиардов</h3>
             <p class="table__text">Число нейронов в мозге человека</p>
           </li>
           <li class="table__cell">
@@ -96,7 +92,7 @@
       <section class="kaufman">
         <h2 class=" kaufman__section-title section-title section-title_theme_dark">Принципы обучения</h2>
         <p class="kaufman__section-subtitle section-subtitle section-subtitle_theme_dark">от Джоша Кауфмана</p>
-        <ul class="kaufman__table table table_theme_dark list">
+        <ul class="kaufman__table table table_theme_dark">
           <li class="table__cell table__cell_theme_dark">
             <h3 class="table__heading table__heading_theme_dark">1</h3>
             <p class="table__text table__text_theme_dark">Выберите привлекательный проект.</p>
@@ -145,41 +141,37 @@
     <footer class="footer">
       <div class="footer__columns">
         <div class="footer__column footer__column_content_copyright">
-          <img class="logo logo_place_footer" src="./images/logo_place_footer.svg" alt="logo-image">
+          <img class="logo logo_place_footer" src="./images/logo_place_footer.svg" alt="картинка-лого">
           <p class="footer__author">&copy; 2020. Илья Соболев</p>
         </div>
-        <div class="footer__column footer__column_content_info">
-          <nav>
-            <h2 class="footer__column-heading">О Практикуме</h2><!--с точки зрения семантики, может лучше использовать <p>?-->
-            <ul class="footer__column-links list">
-              <li>
-                <a class="footer__column-link link" href="#">Главная</a>
-              </li>
-              <li>
-                <a class="footer__column-link link" href="#">Концепция</a>
-              </li>
-              <li>
-                <a class="footer__column-link link" href="#">Наставники</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="footer__column footer__column_content_social">
-          <nav>
-            <h2 class="footer__column-heading">Соцсети</h2>
-            <ul class="footer__column-links list">
-              <li>
-                <a class="footer__column-link link" href="#"><img class="footer__link-icon" src="./images/facebook_color_white.svg" alt="facebook-icon">Facebook</a>
-              </li>
-              <li>
-                <a class="footer__column-link link" href="#"><img class="footer__link-icon" src="./images/vk_color_white.svg" alt="vkontakte-icon">ВКонтакте</a>
-              </li>
-              <li>
-                <a class="footer__column-link link" href="#"><img class="footer__link-icon" src="./images/instagram_color_white.svg" alt="instagram-icon">Instagram</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <nav class="footer__column footer__column_content_info">
+          <h2 class="footer__column-heading">О Практикуме</h2>
+          <ul class="footer__column-links">
+            <li>
+              <a class="footer__column-link link" href="#">Главная</a>
+            </li>
+            <li>
+              <a class="footer__column-link link" href="#">Концепция</a>
+            </li>
+            <li>
+              <a class="footer__column-link link" href="#">Наставники</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__column footer__column_content_social">
+          <h2 class="footer__column-heading">Соцсети</h2>
+          <ul class="footer__column-links">
+            <li>
+              <a class="footer__column-link link" href="#"><img class="footer__social-icon" src="./images/facebook_color_white.svg" alt="лого-facebook">Facebook</a>
+            </li>
+            <li>
+              <a class="footer__column-link link" href="#"><img class="footer__social-icon" src="./images/vk_color_white.svg" alt="лого-вконтакте">ВКонтакте</a>
+            </li>
+            <li>
+              <a class="footer__column-link link" href="#"><img class="footer__social-icon" src="./images/instagram_color_white.svg" alt="лого-instagram">Instagram</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </footer>
   </div>

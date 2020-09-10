@@ -8,15 +8,9 @@
   /* выше для экранов больше 1600px отцентрировали весь контент */
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
-/*знаю, что это неправильно, но я ставил пустые строки только между разными блоками, блоки и его элементны не разделял*/
+
 .link {
-  color: #2f80ed;
   text-decoration: none;
-}
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .header {
@@ -31,11 +25,6 @@
   position: relative;
   overflow: hidden; /*чтоб square-pic не вылезала при сужении*/
 }
-/*Правильно ли это по БЭМ? По БЭМ внешняя геометрия и позиционирование блока задаются от родителя*/
-/*
-.page__header {
-  position: relative;
-}*/
 /*По БЭМ для позиционирования HTML-элементов внутри блока, используется дополнительный элемент этого блока (<block-name>__inner). Надо ли было везде такую оберку делать?*/
 /*
 .header__inner {
@@ -44,8 +33,10 @@
   align-items: center;
 }
 */
+/*Я прочитал ваш ответ - *Нет, обертки не нужны. Здесь немного не так: лишних оберток вообще нужно избегать, если можно сверстать без неё - лучше так и сделать.*
+Но тогда как объяснить вот это - https://clck.ru/QnC6u *БЭМ-HTML-Расположение HTML-элементов внутри блока*. Здесь для элементарного позиционирования используется обертка. И я так понял, это общая рекомендация для описания расположения элементов всех блоков, без частных случаев. Я бы с радостью не использовал это монструозное нагромождение оберток, но если того требуют правила БЭМ, то придется привыкать*/
 .header__title {
-  width: 730px;
+  max-width: 730px;
   margin: 0 0 0 64px;
   line-height: 96px;
   font-size: 102px;
@@ -53,7 +44,7 @@
   z-index: 2;
 }
 .header__subtitle {
-  width: 388px;
+  max-width: 388px;
   position: absolute;
   bottom: 30px;
   left: 64px;
@@ -63,9 +54,10 @@
   font-weight: normal;
   z-index: 2;
 }
+.header__link {
+  color: #2f80ed;
+}
 .header__main-illustration {
-  background-image: url(../images/header-image.png);
-  background-size: cover;
   width: 765px;
   height: 608px;
   position: absolute;
@@ -87,7 +79,7 @@
   width: 183px;
   height: 32px;
 }
-.logo_place_header { /*по БЭМ правильно назвать logo__header. Модификаторами вроде бы нельзя менять позиционирование и внешнюю геометрию. Но по брифу сказано через модификатор реализовать*/
+.logo_place_header {
   position: absolute;
   top: 30px;
   left:64px;
@@ -105,10 +97,9 @@
   justify-content: space-between;
 }
 .two-columns__brief {
-  width: 175px;
+  max-width: 175px;
   flex: 0 0 auto;/*чтобы не уменьшался при сужении окна*/
-}
-.two-columns__title {
+  color: #2f80ed;
   line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
@@ -160,8 +151,15 @@
   font-size: 24px;
   font-weight: normal;
 }
+.digits__table {
+  margin: 0;/*на сколько корректно было бы обнулять margin внутри блока table, а не выносить в микс с digits__table?
+  Ведь по логике блок не должен иметь позиционирование и описание mardgin внутри себя, но table - это <ul>, а он по умолчанию имеет заданный margin. Возможно, хорошим тоном будет обнулять margin по умолчанию у <ul>,<h>,<p> внутри присвоенных им классов блока (ниже в table пример)*/
+}
 .table {
   width: 1100px;
+  /*margin: 0; - пример, а digits__table соответсвенно удалить*/
+  padding: 0;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -187,8 +185,9 @@
 }
 
 .feynman {
-  height: 790px;
+  min-height: 790px;
   padding-top: 100px;
+  box-sizing: border-box; /*добавил по подобию замечания к секции footer, но теперь результат немного разница с брифом (могу предположить, что в брифе border-box задан не был)*/
   background-color: #f2f2f2;
   color: #000;
   display: flex;
@@ -197,7 +196,7 @@
   position: relative;
 }
 .feynman__title {
-  width: 648px;
+  max-width: 648px;
   margin: 0 0 70px;
   text-align: center;
   line-height: 1.15;
@@ -217,6 +216,7 @@
   position: absolute;
   top: 50%;
   right: 48px;
+  transform: translateY(-50%);
   color: #000;
   line-height: 51px;
   font-size: 36px;
@@ -251,6 +251,7 @@
   z-index: 1;
 }
 .kaufman__table {
+  margin: 0;
   z-index: 1;
 }
 .section-title_theme_dark {
@@ -279,6 +280,8 @@
 .footer {
   padding: 60px 0 40px;
   min-height: 350px;
+  box-sizing: border-box; /*если я правильно понял, использовать это свойство надо только если блоку (секции) по брифу задана высота?
+  Если так, то по анологии применил это же свойство к блоку feynman*/
   background-color: #1f1f1f;
   color: white;
   display: flex;
@@ -289,7 +292,7 @@
   display: flex;
   justify-content: space-between;
 }
-.footer__column:first-child {
+.footer__column_content_copyright {
   flex-basis: 711px;
   display: flex;
   flex-direction: column;
@@ -312,7 +315,9 @@
   font-weight: bold;
 }
 .footer__column-links {
-  margin-bottom: 16px;
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
 }
 .footer__column-link {
   color: white;
@@ -320,7 +325,7 @@
   font-size: 18px;
   font-weight: normal;
 }
-.footer__link-icon {
+.footer__social-icon {
   width: 16px;
   height: 16px;
   margin-right: 10px;
