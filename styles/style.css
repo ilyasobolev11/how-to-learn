@@ -8,13 +8,11 @@
   /* выше для экранов больше 1600px отцентрировали весь контент */
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
+/*знаю, что это неправильно, но я ставил пустые строки только между разными блоками, блоки и его элементны не разделял*/
 .link {
   color: #2f80ed;
   text-decoration: none;
 }
-/*.centred-block { не лучше ли реализовывать центрирование посредством flex внутри блока?
-  margin: 0 auto;
-}*/
 .list {
   list-style: none;
   margin: 0;
@@ -103,12 +101,12 @@
 }
 .two-columns {
   width: 80%;
-  display: flex;/*переместить в two-columns__inner и обернуть в него элементы блока two-columns?*/
+  display: flex;
   justify-content: space-between;
 }
 .two-columns__brief {
   width: 175px;
-  flex: 0 0 auto;/*grow|shrink||basis чтобы не уменьшался при сужении окна. Можно через flex-basis вместо width*/
+  flex: 0 0 auto;/*чтобы не уменьшался при сужении окна*/
 }
 .two-columns__title {
   line-height: 1.2;
@@ -261,7 +259,6 @@
 .section-subtitle_theme_dark {
   color: white;
 }
-/*.table_theme_dark {}*/
 /* и элемента с модификатором вида ключ-значение */
 .table__cell_theme_dark {
   width: 200px;
@@ -269,8 +266,6 @@
   margin-right: 0;
   margin-top: 80px;
 }
-/*.table__heading_theme_dark {}
-.table__text_theme_dark {}*/
 .kaufman_triangle {
   background-image: url(../images/kaufman-triangle.svg);
   background-size: cover;
@@ -294,7 +289,6 @@
   display: flex;
   justify-content: space-between;
 }
-/*.footer__column {}*/
 .footer__column:first-child {
   flex-basis: 711px;
   display: flex;
