@@ -23,18 +23,8 @@
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden; /*чтоб square-pic не вылезала при сужении*/
+  overflow: hidden;
 }
-/*По БЭМ для позиционирования HTML-элементов внутри блока, используется дополнительный элемент этого блока (<block-name>__inner). Надо ли было везде такую оберку делать?*/
-/*
-.header__inner {
-  height: inherit;
-  display: flex;
-  align-items: center;
-}
-*/
-/*Я прочитал ваш ответ - *Нет, обертки не нужны. Здесь немного не так: лишних оберток вообще нужно избегать, если можно сверстать без неё - лучше так и сделать.*
-Но тогда как объяснить вот это - https://clck.ru/QnC6u *БЭМ-HTML-Расположение HTML-элементов внутри блока*. Здесь для элементарного позиционирования используется обертка. И я так понял, это общая рекомендация для описания расположения элементов всех блоков, без частных случаев. Я бы с радостью не использовал это монструозное нагромождение оберток, но если того требуют правила БЭМ, то придется привыкать*/
 .header__title {
   max-width: 730px;
   margin: 0 0 0 64px;
@@ -65,7 +55,6 @@
   bottom: 0;
   z-index: 1;
 }
-/* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
 .header__square-pic {
   background-color: #2f80ed;
   height: 568px;
@@ -98,7 +87,7 @@
 }
 .two-columns__brief {
   max-width: 175px;
-  flex: 0 0 auto;/*чтобы не уменьшался при сужении окна*/
+  flex: 0 0 auto;
   color: #2f80ed;
   line-height: 1.2;
   font-size: 18px;
@@ -141,23 +130,17 @@
   font-size: 60px;
   font-weight: bold;
 }
-.digits__section-subtitle {
-  margin: 0;
-}
 .section-subtitle {
+  margin: 0;
   width: 60%;
   text-align: center;
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
 }
-.digits__table {
-  margin: 0;/*на сколько корректно было бы обнулять margin внутри блока table, а не выносить в микс с digits__table?
-  Ведь по логике блок не должен иметь позиционирование и описание mardgin внутри себя, но table - это <ul>, а он по умолчанию имеет заданный margin. Возможно, хорошим тоном будет обнулять margin по умолчанию у <ul>,<h>,<p> внутри присвоенных им классов блока (ниже в table пример)*/
-}
 .table {
   width: 1100px;
-  /*margin: 0; - пример, а digits__table соответсвенно удалить*/
+  margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
@@ -187,7 +170,7 @@
 .feynman {
   min-height: 790px;
   padding-top: 100px;
-  box-sizing: border-box; /*добавил по подобию замечания к секции footer, но теперь результат немного разница с брифом (могу предположить, что в брифе border-box задан не был)*/
+  /*box-sizing: border-box; убран из-за визуального несовпадения с брифом (хотя по логике должен быть оставлен)*/
   background-color: #f2f2f2;
   color: #000;
   display: flex;
@@ -241,18 +224,10 @@
   align-items: center;
   position: relative;
   overflow: hidden;
+  z-index: 0;/*создаем локальный контекст наложения. Хоть это св позиционирования, но я не буду выделять под него page__kaufman класс блока, т.к. это св только для внутреннего отображения*/
 }
 .kaufman__section-title {
   margin: 0 0 20px;
-  z-index: 1;
-}
-.kaufman__section-subtitle {
-  margin: 0;
-  z-index: 1;
-}
-.kaufman__table {
-  margin: 0;
-  z-index: 1;
 }
 .section-title_theme_dark {
   color: white;
@@ -260,7 +235,6 @@
 .section-subtitle_theme_dark {
   color: white;
 }
-/* и элемента с модификатором вида ключ-значение */
 .table__cell_theme_dark {
   width: 200px;
   color: white;
@@ -275,13 +249,13 @@
   position: absolute;
   top: 0;
   right: -210px;
+  z-index: -1;
 }
 
 .footer {
   padding: 60px 0 40px;
   min-height: 350px;
-  box-sizing: border-box; /*если я правильно понял, использовать это свойство надо только если блоку (секции) по брифу задана высота?
-  Если так, то по анологии применил это же свойство к блоку feynman*/
+  box-sizing: border-box;
   background-color: #1f1f1f;
   color: white;
   display: flex;
