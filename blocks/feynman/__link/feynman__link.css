@@ -3,7 +3,8 @@
   top: 50%;
   right: 48px;
   transform: translateY(-50%);
-  color: #000;
+  backface-visibility: hidden;/*чтоб ссылка не дергалась. как это работает!?*/
+  color: #2f80ed;
   line-height: 51px;
   font-size: 36px;
   font-weight: normal;
