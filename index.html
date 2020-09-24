@@ -16,7 +16,7 @@
       <h1 class="header__title">Научиться учиться</h1>
       <p class="header__subtitle">
         Какие современные и эффективные подходы к обучению вы можете использовать в своей жизни?
-        <a class="header__link link" href="#">Узнать &rarr;</a>
+        <a class="header__link" href="#">Узнать &rarr;</a>
       </p>
       <img class="header__main-illustration" src="./images/header-image.png" alt="картинка - опять двойка">
       <div class="header__square-pic rotation"></div>
@@ -41,7 +41,7 @@
       </section>
 
       <section class="techniques">
-        <h2 class="section-title techniques__section-title">Техники обучения</h2>
+        <h2 class="section-title">Техники обучения</h2>
         <p class="section-subtitle">Пять практик от Барбары Оакли</p>
         <ul class="cards">
           <li class="cards__item">
@@ -73,11 +73,11 @@
       </section>
 
       <section class="video">
-        <h2 class="section-title video__section-title">Видео нa TED</h2>
-        <p class="section-subtitle video__section-subtitle">Для тех, кто любит прокрастинировать</p>
+        <h2 class="section-title">Видео нa TED</h2>
+        <p class="section-subtitle">Для тех, кто любит прокрастинировать</p>
         <div class="video__iframes">
-          <iframe class="video__iframe" src="https://www.youtube.com/embed/5MgBikgcWnY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Видео - Как научиться чему-нибудь</iframe>
-          <iframe class="video__iframe" src="https://www.youtube.com/embed/arj7oStGLkU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Видео - Мысли мастера прокрастинации</iframe>
+          <iframe class="video__iframe" src="https://www.youtube.com/embed/5MgBikgcWnY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe class="video__iframe" src="https://www.youtube.com/embed/arj7oStGLkU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </section>
 
@@ -93,13 +93,11 @@
       <section class="feynman">
         <h2 class="feynman__title">Метод Фейнмана</h2>
         <p class="feynman__subtitle">Выучить и не забыть.</p>
-        <a href="#" class="feynman__link link">Подробнее &rarr;</a><!--объясните, пожалуйста, почему при наведении, помимо изменения opacity при hover, ссылка немного дергается (припрыгивает в chrome или двигаются буквы в mozilla)? Пофиксилось все путем задания backface-visibility: hidden для feynman__link, виновник выявлен - transform: translateY(-50%), а точнее велечина заданная в % (если задать в px, никаких движений не будет)-->
-        <!--проблема оказалась в не равном разделении line-height: 51px, при 50% получался лишний пиксель, и, если я правильно понял, при установленном transition значение transform: translate почему-то тоже пересчитывается (наверное)... как это работает!?-->
-        <div class="feynman__main-illustration"></div>
+        <a href="#" class="feynman__link">Подробнее &rarr;</a>
       </section>
 
       <section class="digits">
-        <h2 class="digits__section-title section-title">Цифры и факты</h2>
+        <h2 class="section-title">Цифры и факты</h2>
         <p class="section-subtitle">Про учёбу и мозг</p>
         <ul class="table">
           <li class="table__cell">
@@ -150,13 +148,13 @@
           <p class="khan__quote-author-subline">Кинорежиссер, продюсер</p>
           <div class="khan__book-container">
             <img src="./images/khan-book.jpg" alt="обложка книги" class="khan__book-pic">
-            <a href="#" class="khan__buy-link link">Купить книгу &rarr;</a>
+            <a href="#" class="khan__buy-link">Купить книгу &rarr;</a>
           </div>
         </article>
       </section>
 
       <section class="kaufman">
-        <h2 class=" kaufman__section-title section-title section-title_theme_dark">Принципы обучения</h2>
+        <h2 class="section-title section-title_theme_dark">Принципы обучения</h2>
         <p class="section-subtitle section-subtitle_theme_dark">от Джоша Кауфмана</p>
         <ul class="table table_theme_dark">
           <li class="table__cell table__cell_theme_dark">
@@ -204,20 +202,20 @@
       </section>
 
       <section class="resources">
-        <h2 class="section-title resources__section-title">Полезные ресурсы</h2>
+        <h2 class="section-title">Полезные ресурсы</h2>
         <p class="section-subtitle resources__section-subtitle">Больше материалов о техниках и лайфхаках обучения</p>
         <ul class="resources__logo-zone">
-          <li class="resources__logo resources__logo_pic_arzamas"><!--вроде как не контентное изображение. честно говоря убого получилось, у всех кроме первых логотипов много лишней активной зоны, а как сделать ссылку поверх только изображений (фоновых), я не знаю (придумал ток через псевдоклассы перебрать). UPD подумал и решил размеры через модификатор задать, нормально получилось или извращение (или стоило просто img использовать)?-->
-            <a href="#" class="resources__overlay link"></a>
+          <li>
+            <a href="#"><img src="./images/resources-arzamas.svg" alt="лого-arzamas" class="resources__logo"></a>
           </li>
-          <li class="resources__logo resources__logo_pic_n1">
-            <a href="#" class="resources__overlay resources__overlay_size_s link"></a>
+          <li>
+            <a href="#"><img src="./images/resources-n1.svg" alt="лого-N+1" class="resources__logo"></a>
           </li>
-          <li class="resources__logo resources__logo_pic_strelka">
-            <a href="#" class="resources__overlay resources__overlay_size_m link"></a>
+          <li>
+            <a href="#"><img src="./images/resources-strelka.svg" alt="лого-стрелка" class="resources__logo"></a>
           </li>
-          <li class="resources__logo resources__logo_pic_polka">
-            <a href="#" class="resources__overlay resources__overlay_size_m link"></a>
+          <li>
+            <a href="#"><img src="./images/resources-polka.svg" alt="лого-полка" class="resources__logo"></a>
           </li>
         </ul>
       </section>
@@ -233,13 +231,13 @@
           <h2 class="footer__column-heading">О Практикуме</h2>
           <ul class="footer__column-links">
             <li>
-              <a class="footer__column-link link" href="#">Главная</a>
+              <a class="footer__column-link" href="#">Главная</a>
             </li>
             <li>
-              <a class="footer__column-link link" href="#">Концепция</a>
+              <a class="footer__column-link" href="#">Концепция</a>
             </li>
             <li>
-              <a class="footer__column-link link" href="#">Наставники</a>
+              <a class="footer__column-link" href="#">Наставники</a>
             </li>
           </ul>
         </nav>
@@ -247,13 +245,13 @@
           <h2 class="footer__column-heading">Соцсети</h2>
           <ul class="footer__column-links">
             <li>
-              <a class="footer__column-link link" href="#"><img class="footer__social-icon" src="./images/facebook_color_white.svg" alt="лого-facebook">Facebook</a>
+              <a class="footer__column-link" href="#" target="_blank"><img class="footer__social-icon" src="./images/facebook_color_white.svg" alt="лого-facebook">Facebook</a>
             </li>
             <li>
-              <a class="footer__column-link link" href="#"><img class="footer__social-icon" src="./images/vk_color_white.svg" alt="лого-вконтакте">ВКонтакте</a>
+              <a class="footer__column-link" href="#" target="_blank"><img class="footer__social-icon" src="./images/vk_color_white.svg" alt="лого-вконтакте">ВКонтакте</a>
             </li>
             <li>
-              <a class="footer__column-link link" href="#"><img class="footer__social-icon" src="./images/instagram_color_white.svg" alt="лого-instagram">Instagram</a>
+              <a class="footer__column-link" href="#" target="_blank"><img class="footer__social-icon" src="./images/instagram_color_white.svg" alt="лого-instagram">Instagram</a>
             </li>
           </ul>
         </nav>
